@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            color: red;;
+            text-align: center;
+            font-size: medium;
+        }
+        form{
+            text-align:center;
+            border: 10px solid white;
+           border-radius: 50px;
+            margin:200px;
+        }
+        input{
+            width: 200px;
+        }
+        body{
+            background-repeat: no-repeat;
+            background-image:url('newimage.jpg');
+        }
+      
+      
+    </style>
+</head>
+<body>
+    
+ 
+    <form action="#" onsubmit="func(event)">
+        <h1 style="font-size: 50px;">Book a Call</h1>
+    <p style="text-align:center; color: yellow;font-size:35px;">Book a call Slot our representative will call u in 1 hpur.</p>
+    <hr>
+<label for="name" style="text-align:center;"placeholder="enter ur name">Name</label><br>
+<input type="text" id="name" name="name" placeholder="enter ur name" required ><br>
+<br>
+<label for="email">Email</label><br>
+<input type="email" id="email" name="email" placeholder="enter ur emailid"required><br><br>
+<label for="ph_no">Phone</label><br>
+<input type="tel" id="ph_no" name="pho_num" placeholder="enter ur phone number"required><br><br>
+<label for="time" style="text-align: left;">Time to call</label><br>
+<input type="datetime-local" id="time" name="time"><br><br>
+<button style="background-color:red;color:azure">Get a calls</button>
+    </form>
+    <script>
+        function func(event){
+        event.preventDefault();
+        console.log(event.target.name.value);
+        console.log(event.target.email.value);
+        console.log(event.target.ph_no.value);
+        console.log(event.target.time.value);
+        }
+    </script>
+</body>
+</html>
