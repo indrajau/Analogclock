@@ -1,0 +1,35 @@
+body{
+    background-color: rgb(34, 235, 8);
+ }
+ 
+ .title{
+     text-align: center;
+     font-size: 5rem;
+     color: rgb(206, 14, 164);
+     font-family: 'Courier New', Courier, monospace;
+     font-weight: bold;
+ }
+ .player1{
+     font-size: 20px;
+     color: blue;
+      margin-left: 500px;
+      display: inline-block;
+      text-align:center;
+ 
+ 
+ }
+ .player2{
+     font-size: 20px;
+     color: blue;
+      display: inline-block;
+      margin-left: 320px;
+      text-align: center;  
+ }
+ .img2{
+     margin-left: 300px;
+     
+ }
+ .img1{
+     margin-left: 500px;
+    
+ }
