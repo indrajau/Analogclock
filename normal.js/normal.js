@@ -1,18 +1,62 @@
-/*var obj={num:2}
-var funtionName=function(arg1,arg2,arg3){
-    return this.num+arg1+arg2+arg3;
+// this is inside global scope
+this.table='window table';
+console.log(window.table);
+this.garage={
+    table:'garage table'
 };
-console.log(funtionName.call(obj,arg1,arg2,arg3));
-console.log(funtionName.apply(obj[arg1,arg2,arg3]));
-var bound=funtionName.bind(obj);
-console.log(bound(arg1,arg2,arg3)); */
+// this inside an object
+let johnRoom={
+    table:'johns table'
+};
+console.log(johnRoom.table);
+//this inside a method.
+this.garage={
+    table:'garage table',
+    cleanTable(){
+        console.log(`cleaning ${this.table}`)
+    }
+};
 
-var obj={num : 2};
-var addToThis = function(a,b,c){
-    return this.num+a+b+c;
+let johnsRoom={
+    table:'johns table',
+    cleanTable(){
+        console.log(`cleaning ${this.table}`)
+    }
+};
+johnsRoom.cleanTable();
+this.garage.cleanTable();
+// this is inside the function
+const cleanTable=function(){
+    console.log(`cleaning ${this.table}`)
+};
+console.log();
+
+//call the function to resecure.
+const cleanTabe=function(soap){
+    console.log(`cleaning ${this.table} using {soap}`)
+};
+
+cleanTable.call(this, 'some soap');
+cleanTable.call(this.garage, 'some soap');
+cleanTable.call(johnRoom, 'some soap');
+
+// this inside an inner function
+innerFunction.bind(this)(soap);
+innerFunction(soap);
+
+//this is a constuctor
+
+let createRoom=function(name){
+this.table=`${name}s room`
 }
-console.log(addToThis.call(obj,3));
-console.log(addToThis.call(obj,1,2,3));
-console.log(addToThis.apply(obj,[1,2,3]));
-var bound=addToThis.bind(obj);
-console.log(bound(1,2,3));
+
+const jillsRoom=new createRoom(jill);
+const jilsRoom=new createRoom(john);
+
+// this inside class
+class createRoo( ){
+    constructor(name){
+        this.table=`${name}s table`
+    };
+}
+
